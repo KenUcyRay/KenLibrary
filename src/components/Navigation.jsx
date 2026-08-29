@@ -1,16 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
-const menus = ["Library", "Favorite", "The Best All Time"];
+const menus = [
+  { label: "Library", href: "/" },
+  { label: "Favorite", href: "/favorite" },
+  { label: "The Best All Time", href: "/best-all-time" },
+];
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeMenu, setActiveMenu] = useState("Library");
+  const [activePath, setActivePath] = useState("/");
+
+  useEffect(() => {
+    setActivePath(window.location.pathname);
+  }, []);
 
   return (
     <>
       {/* NAVBAR */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center h-16 px-4 bg-gray-950/90 backdrop-blur border-b border-gray-800">
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center h-16 px-4 bg-[#3E2C23]/95 backdrop-blur border-b border-[#5C4433]">
         <button
           onClick={() => setIsOpen((prev) => !prev)}
           className="flex flex-col justify-center gap-1.5 w-8 h-8"
@@ -18,20 +26,20 @@ export default function Navigation() {
         >
           <motion.span
             animate={{ rotate: isOpen ? 45 : 0, y: isOpen ? 6 : 0 }}
-            className="block h-0.5 w-6 bg-white rounded"
+            className="block h-0.5 w-6 bg-[#F1E2D1] rounded"
           />
           <motion.span
             animate={{ opacity: isOpen ? 0 : 1 }}
-            className="block h-0.5 w-6 bg-white rounded"
+            className="block h-0.5 w-6 bg-[#F1E2D1] rounded"
           />
           <motion.span
             animate={{ rotate: isOpen ? -45 : 0, y: isOpen ? -6 : 0 }}
-            className="block h-0.5 w-6 bg-white rounded"
+            className="block h-0.5 w-6 bg-[#F1E2D1] rounded"
           />
         </button>
 
-        <h1 className="absolute left-1/2 -translate-x-1/2 text-white font-bold text-lg tracking-wide">
-          Astroxus
+        <h1 className="absolute left-1/2 -translate-x-1/2 text-[#F1E2D1] font-bold text-lg tracking-wide">
+          KenLibrary
         </h1>
       </nav>
 
@@ -43,23 +51,23 @@ export default function Navigation() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex gap-2 bg-gray-900/95 backdrop-blur border border-gray-800 rounded-full p-2 shadow-lg"
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex gap-2 bg-[#4A3728]/95 backdrop-blur border border-[#5C4433] rounded-full p-2 shadow-lg"
           >
             {menus.map((menu) => (
-              <button
-                key={menu}
-                onClick={() => setActiveMenu(menu)}
-                className="relative px-4 py-2 text-sm font-medium text-white rounded-full whitespace-nowrap"
+              <a
+                key={menu.href}
+                href={menu.href}
+                className="relative px-4 py-2 text-sm font-medium text-[#F1E2D1] rounded-full whitespace-nowrap"
               >
-                {activeMenu === menu && (
+                {activePath === menu.href && (
                   <motion.div
                     layoutId="activeMenuHighlight"
-                    className="absolute inset-0 bg-blue-500 rounded-full -z-10"
+                    className="absolute inset-0 bg-[#C17B4D] rounded-full -z-10"
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
                 )}
-                {menu}
-              </button>
+                {menu.label}
+              </a>
             ))}
           </motion.div>
         )}

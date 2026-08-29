@@ -32,7 +32,7 @@ export default function Hero() {
   const manhwa = featured[current];
 
   return (
-    <div className="relative w-full h-[70vh] overflow-hidden bg-gray-950">
+    <div className="relative w-full h-[70vh] overflow-hidden bg-[#3E2C23]">
       <AnimatePresence mode="wait">
         <motion.div
           key={current}
@@ -47,7 +47,7 @@ export default function Hero() {
             alt={manhwa.title}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-[#3E2C23] via-[#3E2C23]/60 to-transparent" />
         </motion.div>
       </AnimatePresence>
 
@@ -60,13 +60,13 @@ export default function Hero() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">
+            <h1 className="text-4xl md:text-5xl font-bold text-[#FFF8F0] mb-3">
               {manhwa.title}
             </h1>
-            <p className="text-gray-300 text-sm md:text-base mb-6">
+            <p className="text-[#F1E2D1]/90 text-sm md:text-base mb-6">
               {manhwa.description}
             </p>
-            <button className="bg-white text-gray-950 font-semibold px-6 py-2 rounded-full hover:bg-gray-200 transition">
+            <button className="bg-[#FFF8F0] text-[#3E2C23] font-semibold px-6 py-2 rounded-full hover:bg-[#F1E2D1] transition border border-[#D9CBB5]">
               Baca Sekarang
             </button>
           </motion.div>
@@ -78,12 +78,12 @@ export default function Hero() {
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className="relative h-2 w-8 rounded-full bg-white/30 overflow-hidden"
+            className="relative h-2 w-8 rounded-full bg-[#F1E2D1]/30 overflow-hidden border border-[#F1E2D1]/20"
           >
             {current === i && (
               <motion.div
                 layoutId="activeDot"
-                className="absolute inset-0 bg-white"
+                className="absolute inset-0 bg-[#F1E2D1]"
                 transition={{ duration: 0.3 }}
               />
             )}
