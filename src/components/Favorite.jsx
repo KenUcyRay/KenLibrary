@@ -6,39 +6,72 @@ const dummyFavorites = [
     title: "Reincarnator's Stream",
     cover: "/covers/reincarnators-stream.jpg",
     flag: "kr",
-    chapters: [
-      { number: "Chapter 62", time: "14 mnt" },
-      { number: "Chapter 61", time: "7 hari" },
-    ],
+    totalChapter: 62,
+    status: "Belum tamat",
   },
   {
     title: "The Great Heavenly Demon Sovereign",
     cover: "/covers/great-heavenly-demon.jpg",
     flag: "kr",
-    chapters: [
-      { number: "Chapter 63", time: "20 mnt" },
-      { number: "Chapter 62", time: "7 hari" },
-    ],
+    totalChapter: 63,
+    status: "Belum tamat",
   },
   {
     title: "World's Strongest Punch",
     cover: "/covers/worlds-strongest-punch.jpg",
     flag: "kr",
-    chapters: [
-      { number: "Chapter 16", time: "1 jam" },
-      { number: "Chapter 15", time: "7 hari" },
-    ],
+    totalChapter: 16,
+    status: "Belum tamat",
   },
   {
     title: "Regressor Of The Fallen Family",
     cover: "/covers/regressor-fallen-family.jpg",
     flag: "kr",
-    chapters: [
-      { number: "Chapter 149", time: "1 jam" },
-      { number: "Chapter 148", time: "6 hari" },
-    ],
+    totalChapter: 149,
+    status: "Belum tamat",
   },
-  // ...tambahin sisanya
+  {
+    title: "Swordmaster's Youngest Son",
+    cover: "/covers/swordmasters-youngest-son.jpg",
+    flag: "kr",
+    totalChapter: 87,
+    status: "Belum tamat",
+  },
+  {
+    title: "Chronicles Of The Demon Faction",
+    cover: "/covers/chronicles-demon-faction.jpg",
+    flag: "kr",
+    totalChapter: 102,
+    status: "Tamat",
+  },
+  {
+    title: "Demonic Emperor",
+    cover: "/covers/demonic-emperor.jpg",
+    flag: "kr",
+    totalChapter: 55,
+    status: "Belum tamat",
+  },
+  {
+    title: "The Legendary Hero Is An Academy Honors",
+    cover: "/covers/legendary-hero.jpg",
+    flag: "kr",
+    totalChapter: 45,
+    status: "Belum tamat",
+  },
+  {
+    title: "Solo Leveling: Ragnarok",
+    cover: "/covers/reincarnators-stream.jpg",
+    flag: "kr",
+    totalChapter: 78,
+    status: "Belum tamat",
+  },
+  {
+    title: "Omniscient Reader",
+    cover: "/covers/swordmasters-youngest-son.jpg",
+    flag: "kr",
+    totalChapter: 187,
+    status: "Tamat",
+  },
 ];
 
 function FavoriteCard({ manga }) {
@@ -76,17 +109,12 @@ function FavoriteCard({ manga }) {
         {manga.title}
       </h3>
 
-      {/* Chapters */}
-      <div className="mt-2 space-y-1.5">
-        {manga.chapters.map((ch, i) => (
-          <div
-            key={i}
-            className="flex items-center justify-between text-xs bg-[#F7ECDD] border border-[#D9CBB5] rounded px-2.5 py-1.5"
-          >
-            <span className="text-[#6B5D4F]">{ch.number}</span>
-            <span className="text-[#C17B4D] font-medium">{ch.time}</span>
-          </div>
-        ))}
+      {/* Total Chapter */}
+      <div className="mt-2">
+        <div className="flex items-center justify-between text-xs bg-[#F7ECDD] border border-[#D9CBB5] rounded px-2.5 py-1.5">
+          <span className="text-[#6B5D4F]">Chapter {manga.totalChapter}</span>
+          <span className="text-[#C17B4D] font-medium">{manga.status}</span>
+        </div>
       </div>
     </div>
   );
