@@ -35,7 +35,7 @@ const restRanking = [
 const podiumStyle = {
   1: {
     order: "md:order-2",
-    size: "w-48 md:w-64",
+    size: "w-44 sm:w-48 md:w-64",
     ring: "from-yellow-300 via-amber-500 to-yellow-300",
     glow: "shadow-[0_0_40px_rgba(250,204,21,0.4)]",
     label: "text-yellow-300",
@@ -43,7 +43,7 @@ const podiumStyle = {
   },
   2: {
     order: "md:order-1",
-    size: "w-40 md:w-52",
+    size: "w-36 sm:w-40 md:w-52",
     ring: "from-slate-300 via-slate-400 to-slate-300",
     glow: "shadow-[0_0_30px_rgba(203,213,225,0.3)]",
     label: "text-slate-300",
@@ -51,7 +51,7 @@ const podiumStyle = {
   },
   3: {
     order: "md:order-3",
-    size: "w-40 md:w-52",
+    size: "w-36 sm:w-40 md:w-52",
     ring: "from-orange-400 via-amber-700 to-orange-400",
     glow: "shadow-[0_0_30px_rgba(251,146,60,0.3)]",
     label: "text-orange-400",
@@ -117,13 +117,13 @@ function RankRow({ manga, index }) {
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 0.4, delay: index * 0.08 }}
       whileHover={{ x: 6 }}
-      className="group flex items-center gap-4 bg-[#FFF8F0] border border-[#D9CBB5] hover:border-[#C17B4D]/50 rounded-xl px-4 py-3 transition-colors shadow-sm"
+      className="group flex items-center gap-3 sm:gap-4 bg-[#FFF8F0] border border-[#D9CBB5] hover:border-[#C17B4D]/50 rounded-xl px-3 sm:px-4 py-3 transition-colors shadow-sm"
     >
-      <span className="w-8 text-center text-2xl font-black text-[#A8A492] group-hover:text-[#C17B4D] transition-colors">
+      <span className="w-6 sm:w-8 text-center text-xl sm:text-2xl font-black text-[#A8A492] group-hover:text-[#C17B4D] transition-colors">
         {manga.rank}
       </span>
 
-      <div className="w-12 h-16 rounded-md overflow-hidden bg-[#F7ECDD] border border-[#D9CBB5] shrink-0">
+      <div className="w-10 h-14 sm:w-12 sm:h-16 rounded-md overflow-hidden bg-[#F7ECDD] border border-[#D9CBB5] shrink-0">
         <img
           src={manga.cover}
           alt={manga.title}
@@ -133,10 +133,10 @@ function RankRow({ manga, index }) {
       </div>
 
       <div className="flex-1 min-w-0">
-        <h4 className="text-[#3E2C23] font-semibold text-sm truncate group-hover:text-[#C17B4D] transition-colors">
+        <h4 className="text-[#3E2C23] font-semibold text-xs sm:text-sm truncate group-hover:text-[#C17B4D] transition-colors">
           {manga.title}
         </h4>
-        <p className="text-xs text-[#6B5D4F] mt-0.5">★ {manga.score}</p>
+        <p className="text-[11px] sm:text-xs text-[#6B5D4F] mt-0.5">★ {manga.score}</p>
       </div>
 
       <Flame
@@ -149,25 +149,25 @@ function RankRow({ manga, index }) {
 
 export default function TheBestAllTime() {
   return (
-    <section className="px-4 py-14 max-w-5xl mx-auto">
+    <section className="px-3 sm:px-4 py-8 sm:py-14 max-w-5xl mx-auto mt-16">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -12 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="text-center mb-12"
+        className="text-center mb-8 sm:mb-12"
       >
-        <p className="text-[#B5602E] text-xs font-bold tracking-[0.3em] uppercase mb-2">
+        <p className="text-[#B5602E] text-[10px] sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-2">
           Hall of Fame
         </p>
-        <h2 className="text-3xl md:text-4xl font-extrabold text-[#3E2C23]">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#3E2C23]">
           The Best All Time
         </h2>
       </motion.div>
 
       {/* Podium top 3 */}
-      <div className="flex flex-col md:flex-row items-center md:items-end justify-center gap-10 md:gap-6 mb-16">
+      <div className="flex flex-col md:flex-row items-center md:items-end justify-center gap-8 sm:gap-10 md:gap-6 mb-12 sm:mb-16">
         {topThree.map((manga) => (
           <PodiumCard key={manga.rank} manga={manga} />
         ))}

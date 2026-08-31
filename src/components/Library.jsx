@@ -185,9 +185,9 @@ function MangaCard({ manga }) {
 
 export default function Library() {
   return (
-    <section className="px-4 py-8 max-w-7xl mx-auto">
+    <section className="px-3 sm:px-4 py-6 sm:py-8 max-w-7xl mx-auto">
       {/* Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
         {dummyManhwa.map((manga, i) => (
           <MangaCard key={i} manga={manga} />
         ))}

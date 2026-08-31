@@ -105,7 +105,7 @@ function FavoriteCard({ manga }) {
       </div>
 
       {/* Title - fixed height biar konsisten (2 baris = 48px untuk text-base) */}
-      <h3 className="mt-3 text-base font-bold text-[#3E2C23] leading-tight min-h-[48px] line-clamp-2 group-hover:text-[#B5602E] transition-colors">
+      <h3 className="mt-2 sm:mt-3 text-sm sm:text-base font-bold text-[#3E2C23] leading-tight min-h-[40px] sm:min-h-[48px] line-clamp-2 group-hover:text-[#B5602E] transition-colors">
         {manga.title}
       </h3>
 
@@ -122,17 +122,17 @@ function FavoriteCard({ manga }) {
 
 export default function Favorite() {
   return (
-    <section className="px-4 py-10 max-w-7xl mx-auto">
+    <section className="px-3 sm:px-4 py-6 sm:py-10 max-w-7xl mx-auto mt-16">
       {/* Section header */}
-      <div className="flex items-center gap-2 mb-6">
+      <div className="flex items-center gap-2 mb-4 sm:mb-6">
         <Star className="text-[#B5602E]" size={22} fill="currentColor" />
-        <h2 className="text-xl font-bold text-[#3E2C23] tracking-wide">
+        <h2 className="text-lg sm:text-xl font-bold text-[#3E2C23] tracking-wide">
           Favorite
         </h2>
       </div>
 
       {/* Grid — kolom lebih sedikit biar card lebih besar */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-6">
         {dummyFavorites.map((manga, i) => (
           <FavoriteCard key={i} manga={manga} />
         ))}

@@ -32,7 +32,7 @@ export default function Hero() {
   const manhwa = featured[current];
 
   return (
-    <div className="relative w-full h-[70vh] overflow-hidden bg-[#3E2C23]">
+    <div className="relative w-full h-[55vh] sm:h-[60vh] md:h-[70vh] min-h-[400px] overflow-hidden bg-[#3E2C23] mt-16">
       <AnimatePresence mode="wait">
         <motion.div
           key={current}
@@ -51,7 +51,7 @@ export default function Hero() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-10 flex flex-col justify-end h-full px-8 pb-16 max-w-2xl">
+      <div className="relative z-10 flex flex-col justify-end h-full px-4 sm:px-6 md:px-8 pb-8 sm:pb-12 md:pb-16 max-w-2xl">
         <AnimatePresence mode="wait">
           <motion.div
             key={current}
@@ -60,25 +60,25 @@ export default function Hero() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-[#FFF8F0] mb-3">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-[#FFF8F0] mb-2 sm:mb-3 leading-tight">
               {manhwa.title}
             </h1>
-            <p className="text-[#F1E2D1]/90 text-sm md:text-base mb-6">
+            <p className="text-[#F1E2D1]/90 text-xs sm:text-sm md:text-base mb-4 sm:mb-6 line-clamp-3 sm:line-clamp-none leading-relaxed">
               {manhwa.description}
             </p>
-            <button className="bg-[#FFF8F0] text-[#3E2C23] font-semibold px-6 py-2 rounded-full hover:bg-[#F1E2D1] transition border border-[#D9CBB5]">
+            <button className="bg-[#FFF8F0] text-[#3E2C23] font-semibold text-sm sm:text-base px-5 sm:px-6 py-2 rounded-full hover:bg-[#F1E2D1] transition border border-[#D9CBB5]">
               Baca Sekarang
             </button>
           </motion.div>
         </AnimatePresence>
       </div>
 
-      <div className="absolute bottom-6 right-8 z-10 flex gap-2">
+      <div className="absolute bottom-4 sm:bottom-6 right-4 sm:right-8 z-10 flex gap-1.5 sm:gap-2">
         {featured.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className="relative h-2 w-8 rounded-full bg-[#F1E2D1]/30 overflow-hidden border border-[#F1E2D1]/20"
+            className="relative h-1.5 sm:h-2 w-6 sm:w-8 rounded-full bg-[#F1E2D1]/30 overflow-hidden border border-[#F1E2D1]/20"
           >
             {current === i && (
               <motion.div

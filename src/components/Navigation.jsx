@@ -18,10 +18,10 @@ export default function Navigation() {
   return (
     <>
       {/* NAVBAR */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center h-16 px-4 bg-[#3E2C23]/95 backdrop-blur border-b border-[#5C4433]">
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center h-16 px-4 sm:px-6 bg-[#3E2C23]/95 backdrop-blur border-b border-[#5C4433]">
         <button
           onClick={() => setIsOpen((prev) => !prev)}
-          className="flex flex-col justify-center gap-1.5 w-8 h-8"
+          className="flex flex-col justify-center gap-1.5 w-8 h-8 shrink-0"
           aria-label="Toggle menu"
         >
           <motion.span
@@ -38,7 +38,7 @@ export default function Navigation() {
           />
         </button>
 
-        <h1 className="absolute left-1/2 -translate-x-1/2 text-[#F1E2D1] font-bold text-lg tracking-wide">
+        <h1 className="absolute left-1/2 -translate-x-1/2 text-[#F1E2D1] font-bold text-base sm:text-lg tracking-wide whitespace-nowrap">
           KenLibrary
         </h1>
       </nav>
@@ -51,13 +51,13 @@ export default function Navigation() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex gap-2 bg-[#4A3728]/95 backdrop-blur border border-[#5C4433] rounded-full p-2 shadow-lg"
+            className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-50 flex gap-1 sm:gap-2 bg-[#4A3728]/95 backdrop-blur border border-[#5C4433] rounded-full p-1.5 sm:p-2 shadow-lg max-w-[calc(100vw-1rem)] w-max overflow-x-auto"
           >
             {menus.map((menu) => (
               <a
                 key={menu.href}
                 href={menu.href}
-                className="relative px-4 py-2 text-sm font-medium text-[#F1E2D1] rounded-full whitespace-nowrap"
+                className="relative px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium text-[#F1E2D1] rounded-full whitespace-nowrap shrink-0"
               >
                 {activePath === menu.href && (
                   <motion.div
