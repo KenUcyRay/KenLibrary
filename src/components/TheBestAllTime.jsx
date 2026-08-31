@@ -5,30 +5,30 @@ import { Crown, Flame } from "lucide-react";
 const topThree = [
   {
     rank: 1,
-    title: "The Legendary Hero Is An Academy Honors...",
-    cover: "/covers/legendary-hero.jpg",
+    title: "Lookism",
+    cover: "/covers/lookism.jpeg",
     score: "9.8",
   },
   {
     rank: 2,
-    title: "The Great Heavenly Demon Sovereign",
-    cover: "/covers/great-heavenly-demon.jpg",
+    title: "A.I Doctor",
+    cover: "/covers/ai-doctor.jpeg",
     score: "9.6",
   },
   {
     rank: 3,
-    title: "Reincarnator's Stream",
-    cover: "/covers/reincarnators-stream.jpg",
+    title: "The Bully In Charge",
+    cover: "/covers/bullyinc.jpg",
     score: "9.5",
   },
 ];
 
 const restRanking = [
-  { rank: 4, title: "World's Strongest Punch", cover: "/covers/worlds-strongest-punch.jpg", score: "9.3" },
-  { rank: 5, title: "Swordmaster's Youngest Son", cover: "/covers/swordmasters-youngest-son.jpg", score: "9.2" },
-  { rank: 6, title: "Regressor Of The Fallen Family", cover: "/covers/regressor-fallen-family.jpg", score: "9.1" },
-  { rank: 7, title: "Chronicles Of The Demon Faction", cover: "/covers/chronicles-demon-faction.jpg", score: "9.0" },
-  { rank: 8, title: "Demonic Emperor", cover: "/covers/demonic-emperor.jpg", score: "8.9" },
+  { rank: 4, title: "Solo Leveling", cover: "/covers/solo-leveling.png", score: "9.3" },
+  { rank: 5, title: "Wind Breaker", cover: "/covers/wind-breaker.webp", score: "9.2" },
+  { rank: 6, title: "Mercenary Enrollment", cover: "/covers/mercenary-enrollment.jpg", score: "9.1" },
+  { rank: 7, title: "The Great Mage Return After 4000 Years", cover: "/covers/the-great-mage-return-after-4000-years.jpg", score: "9.0" },
+  { rank: 8, title: "Not Your Typical Reincarnation Story", cover: "/covers/not-your-typical-reincarnation-story.png", score: "8.9" },
 ];
 
 // Style tiap podium beda: rank 1 paling besar & di tengah

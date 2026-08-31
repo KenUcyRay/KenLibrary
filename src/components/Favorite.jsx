@@ -3,74 +3,74 @@ import { Star } from "lucide-react";
 
 const dummyFavorites = [
   {
-    title: "Reincarnator's Stream",
-    cover: "/covers/reincarnators-stream.jpg",
+    title: "A Hero Who Does Everything Well",
+    cover: "/covers/a-hero-who.jpg",
     flag: "kr",
-    totalChapter: 62,
-    status: "Belum tamat",
+    totalChapter: 88,
+    status: "ON GOING",
   },
   {
-    title: "The Great Heavenly Demon Sovereign",
-    cover: "/covers/great-heavenly-demon.jpg",
+    title: "Magic Academy's Genius Blinker",
+    cover: "/covers/magic-academy-genius-blinker.jpg",
     flag: "kr",
-    totalChapter: 63,
-    status: "Belum tamat",
-  },
-  {
-    title: "World's Strongest Punch",
-    cover: "/covers/worlds-strongest-punch.jpg",
-    flag: "kr",
-    totalChapter: 16,
-    status: "Belum tamat",
+    totalChapter: 100,
+    status: "END",
   },
   {
     title: "Regressor Of The Fallen Family",
     cover: "/covers/regressor-fallen-family.jpg",
     flag: "kr",
     totalChapter: 149,
-    status: "Belum tamat",
+    status: "ON GOING",
   },
   {
-    title: "Swordmaster's Youngest Son",
-    cover: "/covers/swordmasters-youngest-son.jpg",
+    title: "Solo Leveling",
+    cover: "/covers/solo-leveling.png",
     flag: "kr",
-    totalChapter: 87,
-    status: "Belum tamat",
+    totalChapter: 179,
+    status: "END",
   },
   {
-    title: "Chronicles Of The Demon Faction",
-    cover: "/covers/chronicles-demon-faction.jpg",
+    title: "Wind Breaker",
+    cover: "/covers/wind-breaker.webp",
     flag: "kr",
-    totalChapter: 102,
-    status: "Tamat",
+    totalChapter: 556,
+    status: "END",
   },
   {
-    title: "Demonic Emperor",
-    cover: "/covers/demonic-emperor.jpg",
+    title: "Mercenary Enrollment",
+    cover: "/covers/mercenary-enrollment.jpg",
     flag: "kr",
-    totalChapter: 55,
-    status: "Belum tamat",
+    totalChapter: 280,
+    status: "ON GOING",
   },
   {
-    title: "The Legendary Hero Is An Academy Honors",
-    cover: "/covers/legendary-hero.jpg",
+    title: "Not Your Typical Reincarnation Story",
+    cover: "/covers/not-your-typical-reincarnation-story.png",
     flag: "kr",
-    totalChapter: 45,
-    status: "Belum tamat",
+    totalChapter: 100,
+    status: "END",
   },
   {
-    title: "Solo Leveling: Ragnarok",
-    cover: "/covers/reincarnators-stream.jpg",
+    title: "The Great Mage Return After 4000 Years",
+    cover: "/covers/the-great-mage-return-after-4000-years.jpg",
     flag: "kr",
-    totalChapter: 78,
-    status: "Belum tamat",
+    totalChapter: 201,
+    status: "END",
   },
   {
-    title: "Omniscient Reader",
-    cover: "/covers/swordmasters-youngest-son.jpg",
+    title: "I Copy Talents",
+    cover: "/covers/icopy-talents.jpeg",
+    flag: "ch",
+    totalChapter: 106,
+    status: "ON GOING",
+  },
+  {
+    title: "A.I Doctor",
+    cover: "/covers/ai-doctor.jpeg",
     flag: "kr",
     totalChapter: 187,
-    status: "Tamat",
+    status: "ON GOING",
   },
 ];
 
@@ -104,8 +104,8 @@ function FavoriteCard({ manga }) {
         </div>
       </div>
 
-      {/* Title */}
-      <h3 className="mt-3 text-base font-bold text-[#3E2C23] line-clamp-2 group-hover:text-[#B5602E] transition-colors">
+      {/* Title - fixed height biar konsisten (2 baris = 48px untuk text-base) */}
+      <h3 className="mt-3 text-base font-bold text-[#3E2C23] leading-tight min-h-[48px] line-clamp-2 group-hover:text-[#B5602E] transition-colors">
         {manga.title}
       </h3>
 
